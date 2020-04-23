@@ -46,3 +46,6 @@ Route::match(['get','post'],'/memberarea', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+Route::get('/redirect/{service}', 'socialcontroller@redirect');
+
+Route::get('/callback/{service}', 'socialcontroller@callback');
